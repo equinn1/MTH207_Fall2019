@@ -1,8 +1,10 @@
 tosses = 50
 
-results = rbinom(tosses,1,0.5)  #generate simulated coin tosses
+outcomes = c('H','T')
+
+results = sample(outcomes,tosses,replace=TRUE)  #generate simulated coin tosses
 table(results)
 
-sum(results)/tosses
+sum(results=='H')/tosses
 
-abs(.5-sum(results)/tosses)
+abs(.5-sum(results=='H')/tosses)
